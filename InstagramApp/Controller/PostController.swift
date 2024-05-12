@@ -26,8 +26,7 @@ class PostController:UICollectionViewController {
     func configureUI(){
         
         collectionView.backgroundColor = .white
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: cellIdentifier)
-                
+        collectionView.register(PostCellView.self, forCellWithReuseIdentifier: cellIdentifier)
     }
 
     
@@ -43,8 +42,8 @@ extension PostController {
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath)
-        cell.backgroundColor = .blue
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! PostCellView
+        
         return cell
     }
     
@@ -55,7 +54,11 @@ extension PostController {
 extension PostController : UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width, height: 150)
+        
+        let width = view.frame.width
+        var height = width + 9 + 44 + 9
+        height += 115
+        return CGSize(width: width, height: height)
     }
     
 }
