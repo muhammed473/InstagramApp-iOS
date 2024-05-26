@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		C410B93F2BEFD22E0070C770 /* PostCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C410B93E2BEFD22E0070C770 /* PostCellView.swift */; };
+		C43987932BFBDB5A00374173 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43987922BFBDB5A00374173 /* LoginController.swift */; };
+		C43987952BFBDB6500374173 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43987942BFBDB6500374173 /* RegisterController.swift */; };
 		C460CCEA2BEB104500D2D145 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C460CCE92BEB104500D2D145 /* AppDelegate.swift */; };
 		C460CCEC2BEB104500D2D145 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C460CCEB2BEB104500D2D145 /* SceneDelegate.swift */; };
 		C460CCF12BEB104500D2D145 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = C460CCF02BEB104500D2D145 /* Base */; };
@@ -28,6 +30,8 @@
 		74FDC4F137463322A2B93855 /* Pods-InstagramApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramApp.debug.xcconfig"; path = "Target Support Files/Pods-InstagramApp/Pods-InstagramApp.debug.xcconfig"; sourceTree = "<group>"; };
 		818BBA0B04ECDA3D5E094716 /* Pods-InstagramApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramApp.release.xcconfig"; path = "Target Support Files/Pods-InstagramApp/Pods-InstagramApp.release.xcconfig"; sourceTree = "<group>"; };
 		C410B93E2BEFD22E0070C770 /* PostCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCellView.swift; sourceTree = "<group>"; };
+		C43987922BFBDB5A00374173 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		C43987942BFBDB6500374173 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		C460CCE62BEB104500D2D145 /* InstagramApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C460CCE92BEB104500D2D145 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C460CCEB2BEB104500D2D145 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -131,6 +135,7 @@
 		C46BA4AE2BEC85F6000E189B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				C4BB79C22BFBDAFF0014E9D0 /* Authentication */,
 				C46BA4B32BEC877D000E189B /* MainTabController.swift */,
 				C4C78A522BECDF9700C790E3 /* PostController.swift */,
 				C4C78A542BECDFB200C790E3 /* SearchController.swift */,
@@ -158,6 +163,15 @@
 				C460CCF22BEB104600D2D145 /* Assets.xcassets */,
 			);
 			path = ExistingTools;
+			sourceTree = "<group>";
+		};
+		C4BB79C22BFBDAFF0014E9D0 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				C43987922BFBDB5A00374173 /* LoginController.swift */,
+				C43987942BFBDB6500374173 /* RegisterController.swift */,
+			);
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 		C4C9497E2BEFD70900018F7D /* OtherScripts */ = {
@@ -283,6 +297,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C43987932BFBDB5A00374173 /* LoginController.swift in Sources */,
 				C410B93F2BEFD22E0070C770 /* PostCellView.swift in Sources */,
 				C4C78A552BECDFB200C790E3 /* SearchController.swift in Sources */,
 				C4C78A592BECE01800C790E3 /* NotificationController.swift in Sources */,
@@ -290,6 +305,7 @@
 				C460CCEA2BEB104500D2D145 /* AppDelegate.swift in Sources */,
 				C4C949822BEFD75000018F7D /* Extensions.swift in Sources */,
 				C4C78A5B2BECE03800C790E3 /* ProfileController.swift in Sources */,
+				C43987952BFBDB6500374173 /* RegisterController.swift in Sources */,
 				C4C78A532BECDF9700C790E3 /* PostController.swift in Sources */,
 				C46BA4B42BEC877D000E189B /* MainTabController.swift in Sources */,
 				C460CCEC2BEB104500D2D145 /* SceneDelegate.swift in Sources */,
