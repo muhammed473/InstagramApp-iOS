@@ -16,32 +16,16 @@ class LoginController : UIViewController {
         iv.contentMode = .scaleAspectFill
         return iv
     }()
-    
-    private let emailField : UITextField = {
-        let txtField = UITextField()
-        txtField.borderStyle = .none
-        txtField.textColor = .white
-        txtField.keyboardAppearance = .dark
-        txtField.keyboardType = .emailAddress
-        txtField.backgroundColor = UIColor(white:1, alpha: 0.1)
-        txtField.setHeight(55)
-        txtField.attributedPlaceholder = NSAttributedString(string: "Email",attributes: [.foregroundColor : UIColor(white: 1, alpha: 0.7)])
-        return txtField
+    private let emailField  : UITextField =  {
+        let textfield  = ReusabilityTextField(customPlaceHolder: "Email")
+        textfield.keyboardType = .emailAddress
+        return textfield
     }()
-    
     private let passwordField : UITextField = {
-        let txtField = UITextField()
-        txtField.borderStyle = .none
-        txtField.textColor = .white
-        txtField.keyboardAppearance = .dark
-        txtField.keyboardType = .emailAddress
-        txtField.backgroundColor = UIColor(white:1, alpha: 0.1)
-        txtField.setHeight(55)
-        txtField.attributedPlaceholder = NSAttributedString(string: "Password",attributes: [.foregroundColor : UIColor(white: 1, alpha: 0.7)])
-        txtField.isSecureTextEntry = true
-        return txtField
+        let textField = ReusabilityTextField(customPlaceHolder: "Password")
+        textField.isSecureTextEntry = true
+        return textField
     }()
-    
     private let loginButton : UIButton = {
         let btn = UIButton(type: .system)
         btn.setTitle("Login", for: .normal)
@@ -52,24 +36,15 @@ class LoginController : UIViewController {
         btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 21)
         return btn
     }()
-
     private let signUpButton : UIButton = {
         let btn = UIButton(type: .system)
-        let attributes : [NSAttributedString.Key:Any] = [.foregroundColor : UIColor(white: 1, alpha: 0.7), .font: UIFont.systemFont(ofSize: 17)]
-        let attributedTitle = NSMutableAttributedString(string: "Don't have an account ?", attributes: attributes)
-        let attributedBold : [ NSAttributedString.Key : Any] = [.foregroundColor : UIColor(white: 1, alpha: 0.7), .font: UIFont.boldSystemFont(ofSize: 17)]
-        attributedTitle.append(NSAttributedString(string: " Sign Up",attributes: attributedBold))
-        btn.setAttributedTitle(attributedTitle, for: .normal)
+        btn.attributedTitle(firstPart: "Don't have an account ?", secondPart: " Sign Up")
+        btn.addTarget(self, action: #selector(touchSignUp), for: .touchUpInside)
         return btn
     }()
-    
     private let forgotPasswordHelpButton : UIButton = {
         let btn = UIButton(type: .system)
-        let attributes : [NSAttributedString.Key:Any] = [.foregroundColor : UIColor(white: 1, alpha: 0.7), .font: UIFont.systemFont(ofSize: 17)]
-        let attributedTitle = NSMutableAttributedString(string: "Forgot your password ?", attributes: attributes)
-        let attributedBold : [ NSAttributedString.Key : Any] = [.foregroundColor : UIColor(white: 1, alpha: 0.7), .font: UIFont.boldSystemFont(ofSize: 17)]
-        attributedTitle.append(NSAttributedString(string: " Get help signing in.",attributes: attributedBold))
-        btn.setAttributedTitle(attributedTitle, for: .normal)
+        btn.attributedTitle(firstPart: "Forgot your password ?", secondPart: " Get help signing in.")
         return btn
     }()
     
@@ -87,11 +62,7 @@ class LoginController : UIViewController {
         view.backgroundColor = .systemMint
         navigationController?.navigationBar.isHidden = true
         navigationController?.navigationBar.barStyle = .black
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.colors = [UIColor.systemPink.cgColor,UIColor.systemBlue.cgColor]
-        gradientLayer.locations = [0,1] // Starts up ends down..
-        view.layer.addSublayer(gradientLayer)
-        gradientLayer.frame = view.frame
+        configureGradientLayer()
         view.addSubview(instagramImageView)
         instagramImageView.centerX(inView: view)
         instagramImageView.setDimensions(height: 85, width: 125)
@@ -106,12 +77,17 @@ class LoginController : UIViewController {
         signUpButton.centerX(inView: view)
         signUpButton.anchor(bottom:view.safeAreaLayoutGuide.bottomAnchor)
         view.addSubview(forgotPasswordHelpButton)
-        forgotPasswordHelpButton.anchor(top:loginButton.bottomAnchor,left:view.leftAnchor,right: view.rightAnchor,paddingTop: 35,paddingLeft: 29,paddingRight: 29)
+        forgotPasswordHelpButton.anchor(top:loginButton.bottomAnchor,left:view.leftAnchor,right: view.rightAnchor,paddingTop: 15,paddingLeft: 29,paddingRight: 29)
         
     }
     
     // MARK: - Actions
     
+    @objc func touchSignUp(){
+
+        let vc = RegisterController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
     
     
 }

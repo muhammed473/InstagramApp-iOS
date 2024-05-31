@@ -16,6 +16,7 @@
 		C460CCF32BEB104600D2D145 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C460CCF22BEB104600D2D145 /* Assets.xcassets */; };
 		C460CCF62BEB104600D2D145 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = C460CCF52BEB104600D2D145 /* Base */; };
 		C46BA4B42BEC877D000E189B /* MainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46BA4B32BEC877D000E189B /* MainTabController.swift */; };
+		C4A0A3682C03F27A00A93EAE /* ReusabilityTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0A3672C03F27A00A93EAE /* ReusabilityTextField.swift */; };
 		C4C78A532BECDF9700C790E3 /* PostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C78A522BECDF9700C790E3 /* PostController.swift */; };
 		C4C78A552BECDFB200C790E3 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C78A542BECDFB200C790E3 /* SearchController.swift */; };
 		C4C78A572BECDFE400C790E3 /* PhotoSelectorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C78A562BECDFE400C790E3 /* PhotoSelectorController.swift */; };
@@ -40,6 +41,7 @@
 		C460CCF52BEB104600D2D145 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C460CCF72BEB104600D2D145 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C46BA4B32BEC877D000E189B /* MainTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabController.swift; sourceTree = "<group>"; };
+		C4A0A3672C03F27A00A93EAE /* ReusabilityTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusabilityTextField.swift; sourceTree = "<group>"; };
 		C4C78A522BECDF9700C790E3 /* PostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostController.swift; sourceTree = "<group>"; };
 		C4C78A542BECDFB200C790E3 /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
 		C4C78A562BECDFE400C790E3 /* PhotoSelectorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSelectorController.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				C410B93E2BEFD22E0070C770 /* PostCellView.swift */,
+				C4A0A3672C03F27A00A93EAE /* ReusabilityTextField.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 				C43987952BFBDB6500374173 /* RegisterController.swift in Sources */,
 				C4C78A532BECDF9700C790E3 /* PostController.swift in Sources */,
 				C46BA4B42BEC877D000E189B /* MainTabController.swift in Sources */,
+				C4A0A3682C03F27A00A93EAE /* ReusabilityTextField.swift in Sources */,
 				C460CCEC2BEB104500D2D145 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
