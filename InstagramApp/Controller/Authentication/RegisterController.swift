@@ -14,6 +14,7 @@ class RegisterController : UIViewController {
     private let photoButton : UIButton = {
         let btn = UIButton()
         btn.setImage(UIImage(named: "plus_photo"), for: .normal)
+        btn.addTarget(self, action: #selector(touchPhotoButton), for: .touchUpInside)
         btn.tintColor = .white
         btn.setDimensions(height: 145, width: 145)
         return btn
@@ -119,6 +120,15 @@ class RegisterController : UIViewController {
         updateForm()
     }
     
+    @objc func touchPhotoButton(){
+        
+        print("PRİNT: Photo is clicked")
+        let pickerController = UIImagePickerController()
+        pickerController.delegate = self
+        pickerController.allowsEditing = true
+        present(pickerController, animated: true, completion: nil)
+    }
+    
 }
 
 // MARK: - FormViewModel
@@ -130,5 +140,21 @@ extension RegisterController : FormViewModel {
         signUpButton.backgroundColor = registerViewModel.buttonBackgroundColor
         signUpButton.setTitleColor(registerViewModel.buttonTitleColor, for: .normal)
         signUpButton.isEnabled = true
+    }
+}
+
+// MARK: - UIImagePickerControllerDelegate & UINavigationControllerDelegate
+
+extension RegisterController : UINavigationControllerDelegate,UIImagePickerControllerDelegate{
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        guard let selectedImage = info[.editedImage] as? UIImage else {return}
+        photoButton.layer.cornerRadius = photoButton.frame.width/2
+        photoButton.layer.masksToBounds = true
+        photoButton.layer.borderColor = UIColor.white.cgColor
+        photoButton.layer.borderWidth = 2
+        photoButton.setImage(selectedImage.withRenderingMode(.alwaysOriginal), for: .normal)
+        self.dismiss(animated: true,completion: nil)
     }
 }
