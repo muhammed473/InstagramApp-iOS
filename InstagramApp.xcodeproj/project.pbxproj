@@ -23,6 +23,7 @@
 		C4C78A592BECE01800C790E3 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C78A582BECE01800C790E3 /* NotificationController.swift */; };
 		C4C78A5B2BECE03800C790E3 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C78A5A2BECE03800C790E3 /* ProfileController.swift */; };
 		C4C949822BEFD75000018F7D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C949812BEFD75000018F7D /* Extensions.swift */; };
+		C4EFEAF52C0A5EB700017436 /* AuthenticationViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EFEAF42C0A5EB700017436 /* AuthenticationViewModels.swift */; };
 		E1EEA814A815DAE5DDF600DD /* Pods_InstagramApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 097C6BF31B852803F213CE2F /* Pods_InstagramApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +49,7 @@
 		C4C78A582BECE01800C790E3 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		C4C78A5A2BECE03800C790E3 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		C4C949812BEFD75000018F7D /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		C4EFEAF42C0A5EB700017436 /* AuthenticationViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModels.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,8 +104,8 @@
 			children = (
 				C46BA4AF2BEC85F9000E189B /* Api */,
 				C46BA4AE2BEC85F6000E189B /* Controller */,
-				C46BA4AD2BEC85F2000E189B /* ViewModel */,
 				C46BA4AC2BEC85EB000E189B /* View */,
+				C4EFEAF32C0A5E9300017436 /* ViewModel */,
 				C46BA4AB2BEC85E1000E189B /* Model */,
 				C4C9497E2BEFD70900018F7D /* OtherScripts */,
 				C46BA4B22BEC86BF000E189B /* ExistingTools */,
@@ -126,13 +128,6 @@
 				C4A0A3672C03F27A00A93EAE /* ReusabilityTextField.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		C46BA4AD2BEC85F2000E189B /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		C46BA4AE2BEC85F6000E189B /* Controller */ = {
@@ -183,6 +178,14 @@
 				C4C949812BEFD75000018F7D /* Extensions.swift */,
 			);
 			path = OtherScripts;
+			sourceTree = "<group>";
+		};
+		C4EFEAF32C0A5E9300017436 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C4EFEAF42C0A5EB700017436 /* AuthenticationViewModels.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -300,6 +303,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4EFEAF52C0A5EB700017436 /* AuthenticationViewModels.swift in Sources */,
 				C43987932BFBDB5A00374173 /* LoginController.swift in Sources */,
 				C410B93F2BEFD22E0070C770 /* PostCellView.swift in Sources */,
 				C4C78A552BECDFB200C790E3 /* SearchController.swift in Sources */,

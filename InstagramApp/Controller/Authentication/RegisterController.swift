@@ -50,8 +50,10 @@ class RegisterController : UIViewController {
         btn.layer.cornerRadius = 6
         btn.setHeight(55)
         btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 21)
+        btn.isEnabled = false
         return btn
     }()
+    private var registerViewModel  = RegisterViewModel()
     
     
     // MARK: - Lifecycle
@@ -61,6 +63,7 @@ class RegisterController : UIViewController {
         
         view.backgroundColor = .systemTeal
         configureUI()
+        configureObserver()
     }
     
     // MARK : - Assistants
@@ -86,9 +89,46 @@ class RegisterController : UIViewController {
         alreadyRegisteredBtn.anchor(bottom:view.safeAreaLayoutGuide.bottomAnchor,paddingBottom: 10)
     }
     
+    func configureObserver(){
+        emailField.addTarget(self, action: #selector(textChange), for: .editingChanged)
+        passwordField.addTarget(self, action: #selector(textChange), for: .editingChanged)
+        nameField.addTarget(self, action: #selector(textChange), for: .editingChanged)
+        usernameField.addTarget(self, action: #selector(textChange), for: .editingChanged)
+    }
+    
+    
     // MARK: - Actions
     
     @objc func touchLogIn(){
         navigationController?.popViewController(animated: true)
+    }
+    
+    @objc func textChange(currentTextField : UITextField){
+       
+        if currentTextField == emailField {
+            registerViewModel.email = currentTextField.text
+        }else if currentTextField == passwordField{
+            registerViewModel.password = currentTextField.text
+        }
+        else if currentTextField == nameField{
+            registerViewModel.fullName = currentTextField.text
+        }
+        else{
+            registerViewModel.userName = currentTextField.text
+        }
+        updateForm()
+    }
+    
+}
+
+// MARK: - FormViewModel
+
+extension RegisterController : FormViewModel {
+    
+    func updateForm() {
+        
+        signUpButton.backgroundColor = registerViewModel.buttonBackgroundColor
+        signUpButton.setTitleColor(registerViewModel.buttonTitleColor, for: .normal)
+        signUpButton.isEnabled = true
     }
 }
