@@ -47,15 +47,16 @@ class RegisterController : UIViewController {
         let btn = UIButton(type: .system)
         btn.setTitle("Sign Up", for: .normal)
         btn.setTitleColor(.white, for: .normal)
-        btn.backgroundColor = .purple
+        btn.backgroundColor = #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1).withAlphaComponent(0.5)
         btn.layer.cornerRadius = 6
         btn.setHeight(55)
         btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 21)
         btn.isEnabled = false
+        btn.addTarget(self, action: #selector(touchSignUp), for: .touchUpInside)
         return btn
     }()
     private var registerViewModel  = RegisterViewModel()
-    
+    private var profileImage : UIImage?
     
     // MARK: - Lifecycle
     
@@ -129,6 +130,22 @@ class RegisterController : UIViewController {
         present(pickerController, animated: true, completion: nil)
     }
     
+    @objc func touchSignUp(){
+        
+        guard let profileImage = self.profileImage else {return}
+        guard let email = emailField.text else {return}
+        guard let password = emailField.text else {return}
+        guard let name = nameField.text else {return}
+        guard let userName = usernameField.text else {return}
+       
+        AuthService.registerUser(authCredentials: AuthCredentials(
+            profileImage: profileImage,
+            email: email,
+            password: password,
+            name: name,
+            userName: userName))
+    }
+    
 }
 
 // MARK: - FormViewModel
@@ -150,6 +167,7 @@ extension RegisterController : UINavigationControllerDelegate,UIImagePickerContr
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         guard let selectedImage = info[.editedImage] as? UIImage else {return}
+        profileImage = selectedImage
         photoButton.layer.cornerRadius = photoButton.frame.width/2
         photoButton.layer.masksToBounds = true
         photoButton.layer.borderColor = UIColor.white.cgColor
