@@ -6,7 +6,8 @@
 //
 
 import UIKit
-import Firebase
+import FirebaseAuth
+import FirebaseFirestoreInternal
 
 struct AuthCredentials{
     
@@ -19,9 +20,26 @@ struct AuthCredentials{
 
 struct AuthService{
     
-    static func registerUser(authCredentials : AuthCredentials){
+    static func registerUser(authCredentials : AuthCredentials,completion: @escaping(Error?) -> Void){
         
-        print("PRİNT : Credentials are \(authCredentials)")
+        ImageUploader.uploadImage(image: authCredentials.profileImage ) {  profileImageUrl in
+            Auth.auth().createUser(withEmail: authCredentials.email, password: authCredentials.password) {  result, error in
+                if let error = error{
+                    print("PRİNT : Failed to Register User : \(error.localizedDescription)")
+                    return
+                }
+                guard let uid = result?.user.uid else {return}
+                let userData : [String:Any] = ["profileImageUrl" :  profileImageUrl,
+                                           "email":authCredentials.email,
+                                           "fullName" : authCredentials.name,
+                                           "userName":authCredentials.userName,
+                                           "uid":uid]
+                Firestore.firestore().collection("Users").document(uid).setData(userData,completion: completion)
+                    
+                
+                    
+            }
+        }
     }
     
 }

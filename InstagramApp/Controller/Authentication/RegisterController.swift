@@ -138,12 +138,20 @@ class RegisterController : UIViewController {
         guard let name = nameField.text else {return}
         guard let userName = usernameField.text else {return}
        
-        AuthService.registerUser(authCredentials: AuthCredentials(
+        let credentials = AuthCredentials(
             profileImage: profileImage,
             email: email,
             password: password,
             name: name,
-            userName: userName))
+            userName: userName)
+        AuthService.registerUser(authCredentials: credentials){ [weak self] error in
+                if let error = error{
+                    print("PRİNT: Failed to Register User : \(error.localizedDescription)")
+                    return
+                }
+                print("PRİNT: Successfuly Registered User with FireStore.")
+                
+            }
     }
     
 }
