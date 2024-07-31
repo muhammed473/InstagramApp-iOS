@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 private let cellIdentifier = "cell"
 
@@ -27,9 +28,25 @@ class PostController:UICollectionViewController {
         
         collectionView.backgroundColor = .white
         collectionView.register(PostCellView.self, forCellWithReuseIdentifier: cellIdentifier)
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(touchLogout))
+        navigationItem.title = "Post"
     }
-
     
+    // MARK: - Actions
+    
+    @objc func touchLogout(){
+        
+        do{
+            try Auth.auth().signOut()
+            let controller = LoginController()
+            let nav = UINavigationController(rootViewController: controller)
+            nav.modalPresentationStyle = .fullScreen
+            self.present(nav, animated: true)
+        }catch{
+            print("PRİNT: Failed to sign out.")
+        }
+    }
+       
 }
 
 // MARK: - UICollectionViewDataSource

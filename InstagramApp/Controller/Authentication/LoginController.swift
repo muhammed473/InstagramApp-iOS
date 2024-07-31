@@ -35,6 +35,7 @@ class LoginController : UIViewController {
         btn.layer.cornerRadius = 6
         btn.setHeight(55)
         btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 21)
+        btn.addTarget(self, action: #selector(touchLogIn), for: .touchUpInside)
         return btn
     }()
     private let signUpButton : UIButton = {
@@ -105,6 +106,19 @@ class LoginController : UIViewController {
             loginViewModel.password = currentTextField.text
         }
         updateForm()
+    }
+    
+    @objc func touchLogIn(){
+        
+        guard let email = emailField.text else {return}
+        guard let password = emailField.text else {return}
+        AuthService.logInUser(email: email, password: password) { result, error in
+            if let error = error{
+                print("PRİNT: Failed to LogIn.")
+                return
+            }
+            self.dismiss(animated: true,completion: nil)
+        }
     }
     
 }
