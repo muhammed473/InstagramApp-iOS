@@ -18,6 +18,8 @@
 		C460CCF32BEB104600D2D145 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C460CCF22BEB104600D2D145 /* Assets.xcassets */; };
 		C460CCF62BEB104600D2D145 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = C460CCF52BEB104600D2D145 /* Base */; };
 		C46BA4B42BEC877D000E189B /* MainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46BA4B32BEC877D000E189B /* MainTabController.swift */; };
+		C49EAB842C5BDCBE00434139 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49EAB832C5BDCBE00434139 /* ProfileCell.swift */; };
+		C49EAB862C5BDCCA00434139 /* ProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49EAB852C5BDCCA00434139 /* ProfileHeader.swift */; };
 		C4A0A3682C03F27A00A93EAE /* ReusabilityTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0A3672C03F27A00A93EAE /* ReusabilityTextField.swift */; };
 		C4C78A532BECDF9700C790E3 /* PostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C78A522BECDF9700C790E3 /* PostController.swift */; };
 		C4C78A552BECDFB200C790E3 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C78A542BECDFB200C790E3 /* SearchController.swift */; };
@@ -47,6 +49,8 @@
 		C460CCF52BEB104600D2D145 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C460CCF72BEB104600D2D145 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C46BA4B32BEC877D000E189B /* MainTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabController.swift; sourceTree = "<group>"; };
+		C49EAB832C5BDCBE00434139 /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
+		C49EAB852C5BDCCA00434139 /* ProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeader.swift; sourceTree = "<group>"; };
 		C4A0A3672C03F27A00A93EAE /* ReusabilityTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusabilityTextField.swift; sourceTree = "<group>"; };
 		C4C78A522BECDF9700C790E3 /* PostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostController.swift; sourceTree = "<group>"; };
 		C4C78A542BECDFB200C790E3 /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
@@ -131,6 +135,7 @@
 		C46BA4AC2BEC85EB000E189B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C49EAB822C5BDCA000434139 /* ProfileView */,
 				C410B93E2BEFD22E0070C770 /* PostCellView.swift */,
 				C4A0A3672C03F27A00A93EAE /* ReusabilityTextField.swift */,
 			);
@@ -170,6 +175,15 @@
 				C460CCF22BEB104600D2D145 /* Assets.xcassets */,
 			);
 			path = ExistingTools;
+			sourceTree = "<group>";
+		};
+		C49EAB822C5BDCA000434139 /* ProfileView */ = {
+			isa = PBXGroup;
+			children = (
+				C49EAB832C5BDCBE00434139 /* ProfileCell.swift */,
+				C49EAB852C5BDCCA00434139 /* ProfileHeader.swift */,
+			);
+			path = ProfileView;
 			sourceTree = "<group>";
 		};
 		C4BB79C22BFBDAFF0014E9D0 /* Authentication */ = {
@@ -313,6 +327,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C49EAB842C5BDCBE00434139 /* ProfileCell.swift in Sources */,
 				C4EFEAF52C0A5EB700017436 /* AuthenticationViewModels.swift in Sources */,
 				C43987932BFBDB5A00374173 /* LoginController.swift in Sources */,
 				C41C05BC2C54F5D20096B8C2 /* ImageUploader.swift in Sources */,
@@ -320,6 +335,7 @@
 				C4C78A552BECDFB200C790E3 /* SearchController.swift in Sources */,
 				C4C78A592BECE01800C790E3 /* NotificationController.swift in Sources */,
 				C4C78A572BECDFE400C790E3 /* PhotoSelectorController.swift in Sources */,
+				C49EAB862C5BDCCA00434139 /* ProfileHeader.swift in Sources */,
 				C460CCEA2BEB104500D2D145 /* AppDelegate.swift in Sources */,
 				C4C949822BEFD75000018F7D /* Extensions.swift in Sources */,
 				C4C78A5B2BECE03800C790E3 /* ProfileController.swift in Sources */,

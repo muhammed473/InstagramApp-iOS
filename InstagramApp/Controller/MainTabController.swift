@@ -30,7 +30,9 @@ class MainTabController: UITabBarController{
         let search = templateNavigationController(unSelectedImage: UIImage(named: "search_unselected"), selectedImage: UIImage(named: "search_selected"), rootViewController: SearchController())
         let photoSelector = templateNavigationController(unSelectedImage: UIImage(named: "plus_unselected"),selectedImage: UIImage(named: "plus_photo"), rootViewController: PhotoSelectorController())
         let notifation = templateNavigationController(unSelectedImage: UIImage(named: "like_unselected"), selectedImage: UIImage(named: "like_selected"), rootViewController: NotificationController())
-        let profile = templateNavigationController(unSelectedImage: UIImage(named: "profile_unselected"),selectedImage: UIImage(named: "profile_selected"), rootViewController: ProfileController())
+        let profileLayout = UICollectionViewFlowLayout()
+        
+        let profile = templateNavigationController(unSelectedImage: UIImage(named: "profile_unselected"),selectedImage: UIImage(named: "profile_selected"), rootViewController: ProfileController(collectionViewLayout: profileLayout))
         viewControllers = [post,search,photoSelector,notifation,profile]
         tabBar.tintColor = .black
     }
